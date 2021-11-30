@@ -78,3 +78,7 @@ li {
 .cloud-icon {
   color: rgb(0, 204, 255);
 }
+.footer {
+  text-align: center;
+  display: block;
+}
