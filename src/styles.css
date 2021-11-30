@@ -2,7 +2,7 @@ body {
   height: 100%;
   width: 100%;
   background-position: center;
-  margin-top: 20px;
+  margin-top: 20px auto;
 }
 .container {
   background-image: url(https://s3.amazonaws.com/shecodesio-production/uploads/files/000/021/455/original/pexels-tim-mossholder-3359733.jpg?1637536240);
