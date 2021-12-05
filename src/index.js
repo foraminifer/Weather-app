@@ -32,6 +32,9 @@ h1.innerHTML = `${month} ${day}, ${year} ${hours}:${minutes}`;
 if (minutes < 10) {
   h1.innterHTML = `${month} ${day}, ${year} ${hours}:0${minutes}`;
 }
+if (hours < 0) {
+  h1.innerHTML = `${month} ${day}, ${year} 0${hours}:${minutes}`;
+}
 
 //city search
 
