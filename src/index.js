@@ -55,26 +55,17 @@ form.addEventListener("submit", handleSubmit);
 
 //temperature conversion
 
-function celsiusTemp(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector("#current-temp");
-  let celsius = 23;
-  temperatureElement.innerHTML = Math.round(celsius);
-}
-
 function fahrenheitTemp(event) {
   event.preventDefault();
-  let celsius = 23;
-  let fahrenheit = Math.round((celsius * 9) / 5 + 32);
-  let temperature = document.querySelector("#current-temp");
-  temperature.innerHTML = `${fahrenheit}`;
+  let fahrenheit = document.querySelector("#current-temp");
+  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+  fahrenheitTemperature.innerHTML = Math.round(fahrenheitTemperature);
 }
 
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", fahrenheitTemp);
 
-let celsiusLink = document.querySelector("#celsius-link");
-celsiusLink.addEventListener("click", celsiusTemp);
+let celsiusTemperature = null;
 
 //current location
 function showMyLocation(response) {
@@ -94,6 +85,8 @@ function showTemperature(response) {
   let pressure = Math.round(response.data.main.pressure);
   let currentPressure = document.querySelector("#pressure");
   currentPressure.innerHTML = pressure;
+
+  celsiusTemperature = response.data.main.temp;
   // humidity
   let humidity = Math.round(response.data.main.humidity);
   let humidChance = document.querySelector("#humidity");
