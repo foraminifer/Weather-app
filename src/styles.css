@@ -33,6 +33,9 @@ h2 {
   position: relative;
   left: 75px;
 }
+.weather-icon {
+  size: 10px;
+}
 .button {
   display: inline;
   background: rgb(219, 187, 5);
