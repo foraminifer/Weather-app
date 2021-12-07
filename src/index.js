@@ -32,7 +32,7 @@ h1.innerHTML = `${month} ${day}, ${year} ${hours}:${minutes}`;
 if (minutes < 10) {
   h1.innterHTML = `${month} ${day}, ${year} ${hours}:0${minutes}`;
 }
-if (hours < 0) {
+if (hours < 10) {
   h1.innerHTML = `${month} ${day}, ${year} 0${hours}:${minutes}`;
 }
 
@@ -40,13 +40,14 @@ if (hours < 0) {
 
 function search(city) {
   let apiKey = "4d2a567c086d07d567943ed0f435616c";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric`;
-  axios.get(`${apiUrl}&appid=${apiKey}`).then(showTemperature);
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(showTemperature);
 }
 
 function handleSubmit(event) {
   event.preventDefault();
   let city = document.querySelector("#city-input").value;
+  console.log(city);
   search(city);
 }
 let form = document.querySelector("#search-form");
@@ -90,9 +91,9 @@ function showTemperature(response) {
   let description = document.querySelector("#description");
   description.innerHTML = response.data.weather[0].main;
   // rain
-  let rain = Math.round(response.data.main.pressure);
-  let rainChance = document.querySelector("#pressure");
-  rainChance.innerHTML = rain;
+  let pressure = Math.round(response.data.main.pressure);
+  let currentPressure = document.querySelector("#pressure");
+  currentPressure.innerHTML = pressure;
   // humidity
   let humidity = Math.round(response.data.main.humidity);
   let humidChance = document.querySelector("#humidity");
@@ -101,16 +102,22 @@ function showTemperature(response) {
   let wind = Math.round(response.data.wind.speed);
   let speed = document.querySelector("#wind");
   speed.innerHTML = wind;
+  // icon
+  let iconElement = document.querySelector("#icon");
+  console.log(iconElement);
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
 }
 
 function getPosition(position) {
-  let longitude = position.coords.longitude;
-  let latitude = position.coords.latitude;
+  let lon = position.coords.longitude;
+  let lat = position.coords.latitude;
   let apiKey = "4d2a567c086d07d567943ed0f435616c";
-  let url = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
 
-  axios.get(url).then(showMyLocation);
-  axios.get(url).then(showTemperature);
+  axios.get(apiUrl).then(showMyLocation);
 }
 
 function getLocation() {
