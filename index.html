@@ -41,29 +41,24 @@
           </form>
         </h2>
         <div style="float: left; width: 50%" class="temperature">
-          <h3 id="city"></h3>
+          <h3 id="city" class="city"></h3>
+          <img src="#" alt="Weather icon" id="icon" />
           <span id="current-temp"> </span>
-          <img
-            src="http://openweathermap.org/img/wn/01d@2x.png"
-            alt="Clear sky"
-            id="icon"
-            class="weather-icon"
-          />
           <span>
             <a href="#" id="celsius-link"> ºC </a>|
             <a href="#" id="fahrenheit-link"> ºF </a>
           </span>
           <br />
-          <span id="description"></span>
+          <span id="description" class="description"></span>
           <br />
         </div>
         <div class="card">
           <div class="card-body">
             <div class="variables">
               <ul>
-                <li>Pressure: <span id="pressure"></span>hPa</li>
+                <li>Pressure: <span id="pressure"></span> hPa</li>
                 <li>Humidity: <span id="humidity"></span>%</li>
-                <li>Wind: <span id="wind"></span>mph</li>
+                <li>Wind: <span id="wind"></span> mph</li>
               </ul>
             </div>
           </div>

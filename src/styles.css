@@ -8,9 +8,11 @@ body {
   background-image: url(https://s3.amazonaws.com/shecodesio-production/uploads/files/000/021/455/original/pexels-tim-mossholder-3359733.jpg?1637536240);
   background-repeat: no-repeat;
   border: 1px solid;
-  width: 50%;
+  width: 40%;
   background-position: 50% 50%;
-  padding-bottom: 30px;
+  padding-bottom: 25px;
+  border-radius: 5px;
+  margin-top: 10px;
 }
 .pageSetup {
   max-width: 700px;
@@ -32,9 +34,6 @@ h2 {
   padding: 10px;
   position: relative;
   left: 75px;
-}
-.weather-icon {
-  size: 10px;
 }
 .button {
   display: inline;
@@ -58,8 +57,18 @@ h2 {
   text-align: center;
   color: white;
 }
+.city {
+  line-height: 1;
+}
+.description {
+  font-size: 24px;
+  margin: 0;
+  padding: 0;
+  line-height: 0.3;
+}
 li {
   list-style: none;
+  padding: 5px;
 }
 .variables {
   font-size: 18px;
