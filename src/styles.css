@@ -70,6 +70,14 @@ li {
   list-style: none;
   padding: 5px;
 }
+.active {
+  color: white;
+  cursor: default;
+  text-decoration: none;
+}
+.active:hover {
+  text-decoration: none;
+}
 .variables {
   font-size: 18px;
   font-family: "Montserrat", sans-serif;
