@@ -5,8 +5,9 @@ body {
   margin-top: 20px auto;
 }
 .container {
-  background-image: url(https://s3.amazonaws.com/shecodesio-production/uploads/files/000/021/455/original/pexels-tim-mossholder-3359733.jpg?1637536240);
+  background-image: url(https://s3.amazonaws.com/shecodesio-production/uploads/files/000/022/369/original/29Z_2105.w026.n002.422B.p1.422.jpg?1639024601);
   background-repeat: no-repeat;
+  background-size: cover;
   border: 1px solid;
   width: 50%;
   background-position: 50% 50%;
@@ -19,8 +20,9 @@ body {
   display: block;
 }
 .card {
-  background-color: rgba(226, 136, 34, 0.726);
+  background-color: rgba(25, 190, 10, 0.726);
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.8);
+  width: 230px;
 }
 
 h1 {
@@ -37,8 +39,8 @@ h2 {
 }
 .button {
   display: inline;
-  background: rgb(219, 187, 5);
-  color: white;
+  background: rgba(241, 226, 86, 0.925);
+  color: rgb(78, 78, 78);
   border: none;
   border-radius: 10px;
   font-size: 22px;
@@ -47,7 +49,8 @@ h2 {
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.8);
 }
 .button:hover {
-  background: rgb(38, 104, 18);
+  background: rgb(35, 144, 187);
+  color: white;
 }
 .temperature {
   font-family: "Montserrat", sans-serif;

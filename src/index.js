@@ -5,7 +5,15 @@ console.log(now.getDay());
 console.log(now.getFullYear());
 console.log(now.getMonth());
 
-let days = ["Sun", "Mon", "Tues", "Weds", "Thurs", "Fri", "Sat"];
+let days = [
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wedsnesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+];
 let day = days[now.getDay()];
 let year = [now.getFullYear()];
 
