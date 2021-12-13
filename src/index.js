@@ -163,7 +163,7 @@ function showTemperature(response) {
     "src",
     `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
-  iconDefault.setAttribute("alt", response.data.weather[0].icon);
+  iconElement.setAttribute("alt", response.data.weather[0].icon);
 
   getForecast(response.data.coord);
 }
