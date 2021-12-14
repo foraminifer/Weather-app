@@ -101,6 +101,8 @@ li {
 }
 .forecastIcon {
   max-width: 80%;
+  display: 0 auto;
+  margin: 0;
 }
 .footer {
   text-align: center;
