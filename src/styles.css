@@ -99,6 +99,9 @@ li {
   padding-right: -40px;
   color: white;
 }
+.forecastIcon {
+  max-width: 80%;
+}
 .footer {
   text-align: center;
   display: block;
