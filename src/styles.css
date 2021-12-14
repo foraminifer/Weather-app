@@ -3,13 +3,14 @@ body {
   width: 100%;
   background-position: center;
   margin-top: 20px auto;
+  background-color: rgb(232, 253, 251);
 }
 .container {
   background-image: url(https://s3.amazonaws.com/shecodesio-production/uploads/files/000/022/369/original/29Z_2105.w026.n002.422B.p1.422.jpg?1639024601);
   background-repeat: no-repeat;
   background-size: cover;
   border: 1px solid;
-  width: 50%;
+  width: 53%;
   background-position: 50% 50%;
   padding-bottom: 25px;
   border-radius: 5px;
@@ -95,7 +96,6 @@ li {
 .weather-forecast-temperature-min {
   text-align: center;
   font-size: 20px;
-  padding-top: 50px;
   padding-right: -40px;
   color: white;
 }
