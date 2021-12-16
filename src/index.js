@@ -1,48 +1,27 @@
-let now = new Date();
-console.log(now.getDate());
-console.log(now.getMilliseconds());
-console.log(now.getDay());
-console.log(now.getFullYear());
-console.log(now.getMonth());
+function formatDate(timestamp) {
+  let date = new Date(timestamp);
+  let hours = date.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  let minutes = date.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
 
-let days = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wedsnesday",
-  "Thursday",
-  "Friday",
-  "Saturday",
-];
-let day = days[now.getDay()];
-let year = [now.getFullYear()];
-
-let months = [
-  "January",
-  "February",
-  "March",
-  "April",
-  "May",
-  "June",
-  "July",
-  "August",
-  "September",
-  "October",
-  "November",
-  "December",
-];
-
-let hours = now.getHours();
-let minutes = now.getMinutes();
-let month = months[now.getMonth()];
-let h1 = document.querySelector("h1");
-h1.innerHTML = `${month} ${day}, ${year} ${hours}:${minutes}`;
-if (minutes < 10) {
-  h1.innterHTML = `${month} ${day}, ${year} ${hours}:0${minutes}`;
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wedsnesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let day = days[date.getDay()];
+  return ` ${day}, ${hours}:${minutes}`;
 }
-if (hours < 10) {
-  h1.innerHTML = `${month} ${day}, ${year} 0${hours}:${minutes}`;
-}
+
 // forecast
 
 function formatDay(timestamp) {
@@ -149,10 +128,13 @@ function showTemperature(response) {
   let temperature = Math.round(response.data.main.temp);
   let currentTemperature = document.querySelector("#current-temp");
   currentTemperature.innerHTML = temperature;
+  // date
+  let dateElement = document.querySelector("#date");
+  dateElement.innerHTML = formatDate(response.data.dt * 1000);
   // description
   let description = document.querySelector("#description");
   description.innerHTML = response.data.weather[0].main;
-  // rain
+  // pressure
   let pressure = Math.round(response.data.main.pressure);
   let currentPressure = document.querySelector("#pressure");
   currentPressure.innerHTML = pressure;
@@ -178,6 +160,7 @@ function showTemperature(response) {
   getForecast(response.data.coord);
 }
 
+// current position
 function getPosition(position) {
   let lon = position.coords.longitude;
   let lat = position.coords.latitude;
