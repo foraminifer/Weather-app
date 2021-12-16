@@ -19,7 +19,11 @@ function formatDate(timestamp) {
     "Saturday",
   ];
   let day = days[date.getDay()];
-  return ` ${day}, ${hours}:${minutes}`;
+  return ` ${day}, ${date.toLocaleDateString("en-US", {
+    hour: "numeric",
+    minute: "numeric",
+    hour12: true,
+  })}`;
 }
 
 // forecast
