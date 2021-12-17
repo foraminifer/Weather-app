@@ -38,6 +38,12 @@ h2 {
   position: relative;
   left: 75px;
 }
+.input {
+  border-radius: 10px;
+  display: inline;
+  font-size: 30px;
+  padding: 5px;
+}
 .button {
   display: inline;
   background: rgba(241, 226, 86, 0.925);
@@ -73,14 +79,6 @@ h2 {
 li {
   list-style: none;
   padding: 5px;
-}
-.active {
-  color: white;
-  cursor: default;
-  text-decoration: none;
-}
-.active:hover {
-  text-decoration: none;
 }
 .variables {
   font-size: 18px;
