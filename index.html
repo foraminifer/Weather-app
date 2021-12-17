@@ -32,19 +32,16 @@
           <form class="search" id="search-form">
             <input type="text" id="city-input" placeholder="Enter a City" />
             <input type="submit" value="Search" class="button" />
-            <input
-              type="submit"
-              value="Current Location"
-              id="currentLocation"
-              class="button"
-            />
+            <button type="button" id="currentLocation" class="button">
+              Current Location
+            </button>
           </form>
         </h2>
         <div style="float: left; width: 50%" class="temperature">
           <h3 id="city" class="city"></h3>
           <img src="#" alt="Weather icon" id="icon" />
-          <span id="current-temp"> </span>
-          <span> ºF</span>
+          <span id="current-temp"></span>
+          <span>ºC</span>
           <br />
           <span id="description" class="description"></span>
           <br />

@@ -85,8 +85,9 @@ function search(city) {
 
 function handleSubmit(event) {
   event.preventDefault();
-  let city = document.querySelector("#city-input").value;
-  console.log(city);
+  let cityInput = document.querySelector("#city-input");
+  console.log(cityInput.value);
+  let city = cityInput.value;
   search(city);
 }
 let form = document.querySelector("#search-form");
@@ -100,9 +101,11 @@ function showMyLocation(response) {
 
 function showTemperature(response) {
   document.querySelector("#city").innerHTML = response.data.name;
-  let temperature = Math.round(response.data.main.temp);
-  let currentTemperature = document.querySelector("#current-temp");
-  currentTemperature.innerHTML = temperature;
+  let temperatureElement = document.querySelector("#current-temp");
+
+  celsiusTemperature = response.data.main.temp;
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
+
   // date
   let dateElement = document.querySelector("#date");
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
@@ -114,7 +117,6 @@ function showTemperature(response) {
   let currentPressure = document.querySelector("#pressure");
   currentPressure.innerHTML = pressure;
 
-  celsiusTemperature = response.data.main.temp;
   // humidity
   let humidity = Math.round(response.data.main.humidity);
   let humidChance = document.querySelector("#humidity");
@@ -142,9 +144,10 @@ function getPosition(position) {
   let apiKey = "4d2a567c086d07d567943ed0f435616c";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
 
-  axios.get(apiUrl).then(showMyLocation);
+  axios.get(apiUrl).then(showTemperature);
 }
-function getLocation() {
+function getLocation(event) {
+  event.preventDefault();
   navigator.geolocation.getCurrentPosition(getPosition);
 }
 let locationButton = document.querySelector("#currentLocation");
